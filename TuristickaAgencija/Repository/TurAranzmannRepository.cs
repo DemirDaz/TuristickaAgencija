@@ -19,11 +19,13 @@ namespace TuristickaAgencija.Repository
         public void AddTurAranzmann(TurAranzmann aranzman)
         {
             this.context.TurAranzmanns.Add(aranzman);
+            this.context.SaveChanges();
         }
 
         public void DeleteTurAranzmann(TurAranzmann aranzman)
         {
             this.context.TurAranzmanns.Remove(aranzman);
+            this.context.SaveChanges();
         }
 
         public IEnumerable<TurAranzmann> FindByDestinacija(string destinacija)

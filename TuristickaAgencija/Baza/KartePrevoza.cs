@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TuristickaAgencija.Baza
 {
-    class KartePrevozaRepository
+    class KartePrevoza
     {
         public int idKarte { get; set; }
         public string destinacija { get; set; }

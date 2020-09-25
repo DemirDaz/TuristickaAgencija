@@ -19,11 +19,13 @@ namespace TuristickaAgencija.Repository
         public void AddKorisnik(Korisnik korisnik)
         {
             this.context.Korisniks.Add(korisnik);
+            this.context.SaveChanges();
         }
 
         public void DeleteKorisnik(Korisnik korisnik)
         {
             this.context.Korisniks.Remove(korisnik);
+            this.context.SaveChanges();
         }
 
         public Korisnik FindByEmail(string email)

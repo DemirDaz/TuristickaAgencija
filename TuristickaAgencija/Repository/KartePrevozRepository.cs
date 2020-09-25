@@ -16,22 +16,24 @@ namespace TuristickaAgencija.Repository
         {
             this.context = context;
         }
-        public void AddKartaPrevoza(KartePrevozaRepository karta)
+        public void AddKartaPrevoza(KartePrevoza karta)
         {
             this.context.KartePrevozas.Add(karta);
+            this.context.SaveChanges();
         }
 
-        public void DeleteKartaPrevoza(KartePrevozaRepository karta)
+        public void DeleteKartaPrevoza(KartePrevoza karta)
         {
             this.context.KartePrevozas.Remove(karta);
+            this.context.SaveChanges();
         }
 
-        public IEnumerable<KartePrevozaRepository> GetAllKartePrevoza()
+        public IEnumerable<KartePrevoza> GetAllKartePrevoza()
         {
             return this.context.KartePrevozas.ToList();
         }
 
-        public KartePrevozaRepository GetKartaPrevozaById(int idKarte)
+        public KartePrevoza GetKartaPrevozaById(int idKarte)
         {
             return this.context.KartePrevozas.Where(c => c.idKarte == idKarte).FirstOrDefault();
         }

@@ -19,11 +19,13 @@ namespace TuristickaAgencija.Repository
         public void AddRezAranzmana(RezAranzmana rez)
         {
             this.context.RezAranzmanas.Add(rez);
+            this.context.SaveChanges();
         }
 
         public void DeleteReferents(RezAranzmana rez)
         {
             this.context.RezAranzmanas.Remove(rez);
+            this.context.SaveChanges();
         }
 
         public IEnumerable<RezAranzmana> FindByAranzman(int idAranzmana)

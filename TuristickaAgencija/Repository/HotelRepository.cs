@@ -19,11 +19,13 @@ namespace TuristickaAgencija.Repository
         public void AddHotel(Hotel hotel)
         {
             this.context.Hotels.Add(hotel);
+            this.context.SaveChanges();
         }
 
         public void DeleteHotel(Hotel hotel)
         {
             this.context.Hotels.Remove(hotel);
+            this.context.SaveChanges();
         }
 
         public Hotel FindByImeHotela(string imeHotela)

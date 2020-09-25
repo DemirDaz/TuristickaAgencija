@@ -19,6 +19,7 @@ namespace TuristickaAgencija.Repository
         public void AddRadnik(Radnik radnik)
         {
             this.context.Radniks.Add(radnik);
+            this.context.SaveChanges();
         }
 
         public bool CombinationExists(string email, string sifra)
@@ -31,6 +32,7 @@ namespace TuristickaAgencija.Repository
         public void DeleteRadnik(Radnik radnik)
         {
             this.context.Radniks.Remove(radnik);
+            this.context.SaveChanges();
         }
 
         public IEnumerable<Radnik> GetAllRadniks()

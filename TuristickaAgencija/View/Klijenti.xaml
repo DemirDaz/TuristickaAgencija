@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="TuristickaAgencija.Klijenti"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TuristickaAgencija"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="{materialDesign:MaterialDesignFont}"
+             Background="LightGray"
+              d:DesignHeight="520" d:DesignWidth="1000">
+    <Grid>
+
+        <StackPanel Margin="40,45,0,25" HorizontalAlignment="Left"  Width="150">
+            <TextBox x:Name="one"
+             materialDesign:HintAssist.Hint="Destinacija"
+             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+             VerticalAlignment="Center" Margin="0,20,0,0" />
+            <DatePicker x:Name="two"
+  Width="150" HorizontalAlignment="Stretch"
+  materialDesign:HintAssist.Hint="Datum Početka"
+  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+            <DatePicker x:Name="three"
+  Width="150" HorizontalAlignment="Stretch"
+  materialDesign:HintAssist.Hint="Datum Završetka"
+  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+            <TextBox x:Name="four"
+             materialDesign:HintAssist.Hint="Cena po osobi"
+             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+             VerticalAlignment="Center" Margin="0,20,0,0" />
+            <TextBox x:Name="five"
+             materialDesign:HintAssist.Hint="Način plaćanja"
+             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+             VerticalAlignment="Center" Margin="0,20,0,0" />
+            <Button
+             Style="{StaticResource MaterialDesignRaisedAccentButton}"
+             Width="100"
+             ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="0,20,0,0" Click="Button_Click">
+                Dodaj novi!
+            </Button>
+
+
+        </StackPanel>
+        <TextBlock
+    Style="{StaticResource MaterialDesignHeadline2TextBlock}" Margin="485,10,-135,0" Width="650" VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center">
+      KLIJENTI
+        </TextBlock>
+        <DataGrid x:Name="grid1"
+  CanUserAddRows="False"
+  SelectionUnit="FullRow"
+                  IsReadOnly="True"
+  SelectionMode="Extended" HorizontalAlignment="Right" Margin="245,80,0,100" />
+    </Grid>
+</UserControl>

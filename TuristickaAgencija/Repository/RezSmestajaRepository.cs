@@ -19,11 +19,13 @@ namespace TuristickaAgencija.Repository
         public void AddRezSmestaja(RezSmestaja rez)
         {
             this.context.RezSmestajas.Add(rez);
+            this.context.SaveChanges();
         }
 
         public void DeleteRezSmestaja(RezSmestaja rez)
         {
             this.context.RezSmestajas.Remove(rez);
+            this.context.SaveChanges();
         }
 
         public IEnumerable<RezSmestaja> GetAllRezSmestaja()

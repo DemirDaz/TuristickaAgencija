@@ -9,10 +9,10 @@ namespace TuristickaAgencija.InterfaceRepository
 {
     interface IKartePrevozRepository
     {
-        IEnumerable<KartePrevozaRepository> GetAllKartePrevoza();
-        void AddKartaPrevoza(KartePrevozaRepository karta);
-        KartePrevozaRepository GetKartaPrevozaById(int idKarte);
-        void DeleteKartaPrevoza(KartePrevozaRepository karta);
+        IEnumerable<KartePrevoza> GetAllKartePrevoza();
+        void AddKartaPrevoza(KartePrevoza karta);
+        KartePrevoza GetKartaPrevozaById(int idKarte);
+        void DeleteKartaPrevoza(KartePrevoza karta);
         
     }
 }

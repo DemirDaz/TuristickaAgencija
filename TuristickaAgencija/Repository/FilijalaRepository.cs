@@ -19,11 +19,13 @@ namespace TuristickaAgencija.Repository
         public void AddFilijala(Filijala filijala)
         {
             this.context.Filijalas.Add(filijala);
+            this.context.SaveChanges();
         }
 
         public void DeleteFilijala(Filijala filijala)
         {
             this.context.Filijalas.Remove(filijala);
+            this.context.SaveChanges();
         }
 
         public IEnumerable<Filijala> GetAllFilijalas()
