@@ -11,34 +11,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TuristickaAgencija"
         mc:Ignorable="d"
-        Title="Login" Height="416.4" Width="800" WindowStartupLocation="CenterScreen">
-    <Grid Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+        Title="Login" Height="410" Width="800" MinHeight="410" MinWidth="700" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,35,3.6,35.4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="790">
+        <Image x:Name="image" Height="215" VerticalAlignment="Center" Source="/TuristickaAgencija;component/Resources/login.jpg" Stretch="Fill" Margin="0,65,-5,36" />
         <TextBlock
-    Style="{StaticResource MaterialDesignHeadline2TextBlock}" Margin="0,60,0,0" Width="650" VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center">
-      TURISTIČKA AGENCIJA
-        </TextBlock>
-        <StackPanel Margin="0,175,0,0" VerticalAlignment="Center" Width="200" HorizontalAlignment="Center">
+    Style="{StaticResource MaterialDesignHeadline2TextBlock}" Margin="70,0,70,244" Width="650" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"><Run Text="TURISTIČKA AGENCIJA"/></TextBlock>
+        <StackPanel Margin="300,95,290,74" VerticalAlignment="Center" Width="200" HorizontalAlignment="Center" Height="147">
             <TextBox
   x:Name="user"
   materialDesign:HintAssist.Hint="Korisničko ime"
-  materialDesign:HintAssist.HelperText="Vaša email adresa." VerticalAlignment="Center">
-                <TextBox.Text>
-                    <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">
-                    </Binding>
-                </TextBox.Text>
-            </TextBox>
+  materialDesign:HintAssist.HelperText="Vaša email adresa." VerticalAlignment="Center"  Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
             <PasswordBox
   x:Name="sifra"
   materialDesign:HintAssist.Hint="Lozinka"
-  materialDesign:HintAssist.Foreground="DodgerBlue"
-  materialDesign:TextFieldAssist.UnderlineBrush="DodgerBlue"
+  materialDesign:HintAssist.Foreground="White"
+  materialDesign:TextFieldAssist.UnderlineBrush="Orange"
   Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Height="59" Margin="0,0,0.2,0" />
             <Button
     Style="{StaticResource MaterialDesignRaisedButton}"
     Width="100"
-    ToolTip="Resource name: MaterialDesignRaisedButton" Margin="0,24,0,0" Click="Button_Click">
-                Uloguj se!
-            </Button>
+    ToolTip="Resource name: MaterialDesignRaisedButton" Margin="0,24,0,0" Click="Button_Click" Content="Uloguj se!"/>
 
         </StackPanel>
     </Grid>

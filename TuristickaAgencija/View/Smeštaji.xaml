@@ -11,7 +11,7 @@
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="{materialDesign:MaterialDesignFont}"
-             Background="LightGray"
+             Background="DarkSlateGray"
              d:DesignHeight="520" d:DesignWidth="1000">
     <Grid>
 
@@ -40,19 +40,25 @@
 
         </StackPanel>
         <TextBlock
-    Style="{StaticResource MaterialDesignHeadline2TextBlock}" Margin="178,205,172,0" Width="650" VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center">
-      SMEŠTAJI
-        </TextBlock>
+    Style="{StaticResource MaterialDesignHeadline2TextBlock}" Margin="178,214,172,0" Width="650" VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center" Height="70"><Run Text="SMEŠTAJI"/></TextBlock>
         <DataGrid x:Name="grid1"
   CanUserAddRows="False"
   SelectionUnit="FullRow"
                   IsReadOnly="True"
-  SelectionMode="Extended" HorizontalAlignment="Left" Margin="25,0,0,310" />
+  SelectionMode="Extended" HorizontalAlignment="Left" Margin="25,0,0,300" >
+            <DataGrid.Background>
+                <ImageBrush ImageSource="/TuristickaAgencija;component/Resources/darksmestaj2.jpg"/>
+            </DataGrid.Background>
+        </DataGrid>
         <DataGrid x:Name="grid2"
   CanUserAddRows="False"
   SelectionUnit="FullRow"
                   IsReadOnly="True"
-  SelectionMode="Extended" HorizontalAlignment="Right" Margin="0,280,0,10" />
+  SelectionMode="Extended" HorizontalAlignment="Right" Margin="0,290,37,0" >
+            <DataGrid.Background>
+                <ImageBrush ImageSource="/TuristickaAgencija;component/Resources/darksmestaj1.jpg" Stretch="UniformToFill"/>
+            </DataGrid.Background>
+        </DataGrid>
         <StackPanel Margin="25,220,0,10" HorizontalAlignment="Left"  Width="153">
             <TextBox x:Name="one1"
                 materialDesign:HintAssist.Hint="Destinacija"
@@ -79,9 +85,9 @@
         </StackPanel>
         <Button
                 Style="{StaticResource MaterialDesignRaisedAccentButton}"
-                ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="203,220,655,266" Click="Button_Click" Content="Dodaj novi hotel!" Height="Auto"/>
+                ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="216,226,642,244" Click="Button_Click" Content="Dodaj novi hotel!" Height="Auto"/>
         <Button
              Style="{StaticResource MaterialDesignRaisedAccentButton}"
-             ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="645,220,213,266" Click="Button_Click" Height="Auto" Content="Dodaj rezervaciju!"/>
+             ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="645,226,213,242" Click="Button_Click" Height="Auto" Content="Dodaj rezervaciju!"/>
     </Grid>
 </UserControl>

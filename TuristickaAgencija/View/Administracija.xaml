@@ -11,12 +11,14 @@
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="{materialDesign:MaterialDesignFont}"
-             Background="LightGray"
+             Background="DimGray"
              
             d:DesignHeight="520" d:DesignWidth="1000">
     <Grid>
 
-        <StackPanel Margin="30,55,0,25" HorizontalAlignment="Left"  Width="150">
+        <Image x:Name="image" HorizontalAlignment="Left" Height="200" Margin="0,325,0,-5" VerticalAlignment="Top" Width="1000" Source="/TuristickaAgencija;component/Resources/aranz2.jpg" Stretch="Fill"/>
+
+        <StackPanel Margin="30,-20,0,100" HorizontalAlignment="Left"  Width="150">
             <TextBox x:Name="one"
              materialDesign:HintAssist.Hint="Destinacija"
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
@@ -40,20 +42,16 @@
             <Button
              Style="{StaticResource MaterialDesignRaisedAccentButton}"
              Width="100"
-             ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="0,20,0,0" Click="Button_Click">
-                Dodaj novi!
-            </Button>
+             ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="0,20,0,0" Click="Button_Click" Content="Dodaj novi!"/>
 
 
         </StackPanel>
         <TextBlock
-    Style="{StaticResource MaterialDesignHeadline2TextBlock}" Margin="355,10,-65,0" Width="650" VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center">
-      ADMINISTRACIJA
-        </TextBlock>
+    Style="{StaticResource MaterialDesignHeadline2TextBlock}" Margin="55,385,295,0" Width="650" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center"><Run Text="ADMINISTRACIJA"/></TextBlock>
         <DataGrid x:Name="grid1"
   CanUserAddRows="False"
   SelectionUnit="FullRow"
                   IsReadOnly="True"
-  SelectionMode="Extended" HorizontalAlignment="Left" Margin="245,80,0,100" />
+  SelectionMode="Extended" HorizontalAlignment="Left" Margin="210,0,0,195" />
     </Grid>
 </UserControl>

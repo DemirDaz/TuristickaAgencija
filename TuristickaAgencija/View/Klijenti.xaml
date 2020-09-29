@@ -11,11 +11,13 @@
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="{materialDesign:MaterialDesignFont}"
-             Background="LightGray"
+             Background="DarkSlateGray"
               d:DesignHeight="520" d:DesignWidth="1000">
     <Grid>
 
-        <StackPanel Margin="40,45,0,25" HorizontalAlignment="Left"  Width="150">
+        <Image x:Name="image" HorizontalAlignment="Left" Height="190" Margin="0,330,0,0" VerticalAlignment="Top" Width="1000" Source="/TuristickaAgencija;component/Resources/klijenti.jpg" Stretch="Fill"/>
+
+        <StackPanel Margin="685,-5,0,190" HorizontalAlignment="Left"  Width="150">
             <TextBox x:Name="one"
              materialDesign:HintAssist.Hint="Destinacija"
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
@@ -39,20 +41,16 @@
             <Button
              Style="{StaticResource MaterialDesignRaisedAccentButton}"
              Width="100"
-             ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="0,20,0,0" Click="Button_Click">
-                Dodaj novi!
-            </Button>
+             ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="0,20,0,0" Click="Button_Click" Content="Dodaj novi!"/>
 
 
         </StackPanel>
         <TextBlock
-    Style="{StaticResource MaterialDesignHeadline2TextBlock}" Margin="485,10,-135,0" Width="650" VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center">
-      KLIJENTI
-        </TextBlock>
+    Style="{StaticResource MaterialDesignHeadline2TextBlock}" Margin="85,355,265,0" Foreground="Black" Width="650" VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center"><Run Text="KLIJENTI"/></TextBlock>
         <DataGrid x:Name="grid1"
   CanUserAddRows="False"
   SelectionUnit="FullRow"
                   IsReadOnly="True"
-  SelectionMode="Extended" HorizontalAlignment="Right" Margin="245,80,0,100" />
+  SelectionMode="Extended" HorizontalAlignment="Left" Margin="0,0,0,190" />
     </Grid>
 </UserControl>

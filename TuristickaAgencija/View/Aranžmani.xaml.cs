@@ -33,6 +33,7 @@ namespace TuristickaAgencija
             napuniAranzmane();
             
             grid1.ItemsSource = aranz;
+            grid2.ItemsSource = aranz; //izmeni
             
 
         }
