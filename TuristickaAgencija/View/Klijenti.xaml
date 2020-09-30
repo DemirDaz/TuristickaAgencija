@@ -15,7 +15,7 @@
               d:DesignHeight="520" d:DesignWidth="1000">
     <Grid>
 
-        <Image x:Name="image" HorizontalAlignment="Left" Height="190" Margin="0,330,0,0" VerticalAlignment="Top" Width="1000" Source="/TuristickaAgencija;component/Resources/klijenti.jpg" Stretch="Fill"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="310" Margin="0,335,0,-125" VerticalAlignment="Top" Width="1000" Source="/TuristickaAgencija;component/Resources/klijenti.jpg" Stretch="Fill"/>
 
         <StackPanel Margin="685,-5,0,190" HorizontalAlignment="Left"  Width="150">
             <TextBox x:Name="one"
@@ -46,7 +46,7 @@
 
         </StackPanel>
         <TextBlock
-    Style="{StaticResource MaterialDesignHeadline2TextBlock}" Margin="85,355,265,0" Foreground="Black" Width="650" VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center"><Run Text="KLIJENTI"/></TextBlock>
+    Style="{StaticResource MaterialDesignHeadline2TextBlock}" Margin="185,398,165,0" Foreground="Black" Width="650" VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center"><Run Text="KLIJENTI"/></TextBlock>
         <DataGrid x:Name="grid1"
   CanUserAddRows="False"
   SelectionUnit="FullRow"

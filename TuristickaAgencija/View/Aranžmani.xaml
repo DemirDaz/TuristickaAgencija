@@ -34,9 +34,8 @@
   materialDesign:HintAssist.Hint="Datum Početka"
   Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
             <DatePicker x:Name="three"
-  Width="150" HorizontalAlignment="Stretch"
   materialDesign:HintAssist.Hint="Datum Završetka"
-  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="-2,0,2.4,0" />
+  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="0,0,0.4,0" />
             <TextBox x:Name="four"
              materialDesign:HintAssist.Hint="Cena po osobi"
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"

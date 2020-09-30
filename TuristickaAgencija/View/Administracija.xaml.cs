@@ -45,7 +45,7 @@ namespace TuristickaAgencija
         {
 
 
-            if (two.SelectedDate.Value < three.SelectedDate.Value)
+             /* if (two.SelectedDate.Value < three.SelectedDate.Value)
             {
                 TurAranzmann novi = new TurAranzmann();
                 novi.destinacija = one.Text;
@@ -77,7 +77,7 @@ namespace TuristickaAgencija
             napuniRadnike();
 
             grid1.ItemsSource = aranz;
-            
+            */
 
 
         }
