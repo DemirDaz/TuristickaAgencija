@@ -17,40 +17,46 @@
 
         <Image x:Name="image" HorizontalAlignment="Left" Height="310" Margin="0,335,0,-125" VerticalAlignment="Top" Width="1000" Source="/TuristickaAgencija;component/Resources/klijenti.jpg" Stretch="Fill"/>
 
-        <StackPanel Margin="685,-5,0,190" HorizontalAlignment="Left"  Width="150">
-            <TextBox x:Name="one"
-             materialDesign:HintAssist.Hint="Destinacija"
+        <StackPanel Margin="665,-5,0,190" HorizontalAlignment="Left"  Width="170">
+            <TextBox x:Name="jmbg"
+             materialDesign:HintAssist.Hint="JMBG klijenta"
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-             VerticalAlignment="Center" Margin="0,20,0,0" />
-            <DatePicker x:Name="two"
-  Width="150" HorizontalAlignment="Stretch"
-  materialDesign:HintAssist.Hint="Datum Početka"
-  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
-            <DatePicker x:Name="three"
-  Width="150" HorizontalAlignment="Stretch"
-  materialDesign:HintAssist.Hint="Datum Završetka"
-  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
-            <TextBox x:Name="four"
-             materialDesign:HintAssist.Hint="Cena po osobi"
+             VerticalAlignment="Center" Margin="0,20,0,0" AutomationProperties.IsRequiredForForm="True" />
+            <TextBox x:Name="ime"
+             materialDesign:HintAssist.Hint="Ime"
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-             VerticalAlignment="Center" Margin="0,20,0,0" />
-            <TextBox x:Name="five"
-             materialDesign:HintAssist.Hint="Način plaćanja"
+             VerticalAlignment="Center" Margin="0,0,0,0" AutomationProperties.IsRequiredForForm="True" />
+            <TextBox x:Name="prezime"
+             materialDesign:HintAssist.Hint="Prezime"
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-             VerticalAlignment="Center" Margin="0,20,0,0" />
+             VerticalAlignment="Center" Margin="0,0,0,0" AutomationProperties.IsRequiredForForm="True" />
+            <TextBox x:Name="adresa"
+             materialDesign:HintAssist.Hint="Adresa Stanovanja"
+             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+             VerticalAlignment="Center" Margin="0,0,0,0" AutomationProperties.IsRequiredForForm="True" />
+            <TextBox x:Name="telefon"
+             materialDesign:HintAssist.Hint="Broj telefona"
+             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+             VerticalAlignment="Center" Margin="0,0,0,0" AutomationProperties.IsRequiredForForm="True" />
+            <TextBox x:Name="email"
+             materialDesign:HintAssist.Hint="Email adresa"
+             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+             VerticalAlignment="Center" Margin="0,0,0,0" AutomationProperties.IsRequiredForForm="True" />
             <Button
              Style="{StaticResource MaterialDesignRaisedAccentButton}"
-             Width="100"
-             ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="0,20,0,0" Click="Button_Click" Content="Dodaj novi!"/>
+             ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="0,20,0.4,0" Click="Button_Click" Content="Dodaj novog klijenta!"/>
 
 
         </StackPanel>
         <TextBlock
-    Style="{StaticResource MaterialDesignHeadline2TextBlock}" Margin="185,398,165,0" Foreground="Black" Width="650" VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center"><Run Text="KLIJENTI"/></TextBlock>
+    Style="{StaticResource MaterialDesignHeadline2TextBlock}" Margin="220,360,130,0" Foreground="Black" Width="650" VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center"><Run Text="KLIJENTI"/></TextBlock>
         <DataGrid x:Name="grid1"
   CanUserAddRows="False"
   SelectionUnit="FullRow"
                   IsReadOnly="True"
-  SelectionMode="Extended" HorizontalAlignment="Left" Margin="0,0,0,190" />
+  SelectionMode="Extended" HorizontalAlignment="Left" Margin="0,0,0,190" SelectionChanged="grid1_SelectionChanged" />
+        <Button
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="466,295,340,193" Click="Obrisi" Content="Obriši odabranog klijenta!" Height="Auto"/>
     </Grid>
 </UserControl>
