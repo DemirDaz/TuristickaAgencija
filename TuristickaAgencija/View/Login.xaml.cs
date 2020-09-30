@@ -63,6 +63,7 @@ namespace TuristickaAgencija
                     Globalne.menadzer = true;
                         } else Globalne.menadzer = false;
                 MainWindow Glavniprozor = new MainWindow();
+                Ocisti();
                 Glavniprozor.Owner = this;
                 Glavniprozor.ShowDialog();
 

@@ -15,16 +15,20 @@
              d:DesignHeight="520" d:DesignWidth="1000">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="51*"/>
             <RowDefinition Height="53*"/>
+            <RowDefinition Height="51*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Margin="10,-13,0,10.2" HorizontalAlignment="Left"  Width="150">
+        <StackPanel Margin="40,0,0,255" HorizontalAlignment="Left"  Width="150" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <TextBox x:Name="one"
              materialDesign:HintAssist.Hint="Destinacija"
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-             VerticalAlignment="Center" Margin="0,10,0,0" />
+             VerticalAlignment="Center" Margin="0,0,0,3" />
             <DatePicker x:Name="two"
   Width="150" HorizontalAlignment="Stretch"
   materialDesign:HintAssist.Hint="Datum Početka"
@@ -32,25 +36,28 @@
             <DatePicker x:Name="three"
   Width="150" HorizontalAlignment="Stretch"
   materialDesign:HintAssist.Hint="Datum Završetka"
-  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="-2,0,2.4,0" />
             <TextBox x:Name="four"
              materialDesign:HintAssist.Hint="Cena po osobi"
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-             VerticalAlignment="Center" Margin="0,10,0,0" />
+             VerticalAlignment="Center" Margin="0,0,0,3" />
             <TextBox x:Name="five"
              materialDesign:HintAssist.Hint="Način plaćanja"
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-             VerticalAlignment="Center" Margin="0,10,0,0" />
+             VerticalAlignment="Center" Margin="0,0,0,3" />
+            <Button
+             Style="{StaticResource MaterialDesignRaisedAccentButton}"
+             ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="0,0,0.4,0" Click="Button_Click" Content="Dodaj aranžman!" Height="34" FontWeight="Medium"/>
 
 
         </StackPanel>
         <TextBlock
-    Style="{StaticResource MaterialDesignHeadline2TextBlock}" Margin="305,227,45,0" Width="650" VerticalAlignment="Top" TextAlignment="Center" HorizontalAlignment="Center" RenderTransformOrigin="0.178,1.008" Grid.RowSpan="2" Height="67"><Run Text="ARANŽMANI"/></TextBlock>
+    Style="{StaticResource MaterialDesignHeadline2TextBlock}" Margin="133.2,235,92,0" Width="650" VerticalAlignment="Top" TextAlignment="Center" HorizontalAlignment="Center" RenderTransformOrigin="0.178,1.008" Grid.RowSpan="2" Height="67" Grid.Column="1"><Run Text="ARANŽMANI"/></TextBlock>
         <DataGrid x:Name="grid1"
   CanUserAddRows="False"
   SelectionUnit="FullRow"
                   IsReadOnly="True"
-  SelectionMode="Extended" HorizontalAlignment="Left" Margin="273,0,0,23.2" >
+  SelectionMode="Extended" HorizontalAlignment="Left" Margin="97.2,0,0,23.8" Grid.Column="1"  >
             <DataGrid.Background>
                 <ImageBrush ImageSource="/TuristickaAgencija;component/Resources/darkaranz3.jpg" Stretch="UniformToFill"/>
             </DataGrid.Background>
@@ -59,41 +66,35 @@
             CanUserAddRows="False"
             SelectionUnit="FullRow"
             IsReadOnly="True"
-            SelectionMode="Extended" HorizontalAlignment="Left" Margin="273,43.8,0,0" Grid.Row="1" >
+            SelectionMode="Extended" HorizontalAlignment="Left" Margin="97.2,37.2,0,0" Grid.Row="1" Grid.Column="1" >
             <DataGrid.Background>
                 <ImageBrush ImageSource="/TuristickaAgencija;component/Resources/darkaranz4.jpg"/>
             </DataGrid.Background>
         </DataGrid>
-        <StackPanel Margin="10,255,0,0" HorizontalAlignment="Left"  Width="150" Grid.RowSpan="2">
-            <TextBox x:Name="one1"
-                materialDesign:HintAssist.Hint="Destinacija"
-                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                VerticalAlignment="Center" Margin="0,10,0,0" />
+        <StackPanel Margin="40,47.2,0,0" HorizontalAlignment="Left"  Width="150" Grid.Row="1" Grid.ColumnSpan="2">
+            <ComboBox x:Name="idaranz"
+             materialDesign:HintAssist.Hint="id Aranžmana" Margin="0,5,0.4,5" Height="28">
+
+            </ComboBox>
+            <ComboBox x:Name="jmbg"
+             materialDesign:HintAssist.Hint="jmbg klijenta" Margin="0,5">
+
+            </ComboBox>
             <DatePicker x:Name="two1"
                 Width="150" HorizontalAlignment="Stretch"
-                materialDesign:HintAssist.Hint="Datum Početka"
+                materialDesign:HintAssist.Hint="Datum Rezervacije:"
                 Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
-            <DatePicker x:Name="three1"
-                Width="150" HorizontalAlignment="Stretch"
-                materialDesign:HintAssist.Hint="Datum Završetka"
-                Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+
             <TextBox x:Name="four1"
-                materialDesign:HintAssist.Hint="Cena po osobi"
+                materialDesign:HintAssist.Hint="Broj osoba:"
                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                VerticalAlignment="Center" Margin="0,10,0,0" />
-            <TextBox x:Name="five1"
-                materialDesign:HintAssist.Hint="Način plaćanja"
-                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                VerticalAlignment="Center" Margin="0,10,0,0" />
+                VerticalAlignment="Center" Margin="2,0,-1.6,5" />
+            <Button
+                Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="0,0,-1.6,0" Click="Button_Click2" Content="Dodaj rezervaciju!" Height="35" RenderTransformOrigin="0.629,-1.975" HorizontalAlignment="Center" VerticalAlignment="Center" Width="152"/>
+
 
 
         </StackPanel>
-        <Button
-                Style="{StaticResource MaterialDesignRaisedAccentButton}"
-                ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="165,122.8,732,110" Click="Button_Click" Content="Dodaj novi!" Height="Auto" Grid.Row="1" RenderTransformOrigin="0.629,-1.975"/>
-        <Button
-             Style="{StaticResource MaterialDesignRaisedAccentButton}"
-             Width="100"
-             ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="165,108,735,115.2" Click="Button_Click" Content="Dodaj novi!" Height="Auto"/>
     </Grid>
 </UserControl>

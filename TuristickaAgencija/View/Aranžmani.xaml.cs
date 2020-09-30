@@ -25,22 +25,50 @@ namespace TuristickaAgencija
         private Baza.DbTuristickaAgencija context;
         private UnitOfWork unit;
         private IEnumerable<TurAranzmann> aranz;
+        private IEnumerable<RezAranzmana> aranr;
+        private IEnumerable<Korisnik> korisnici;
         public Aranžmani()
         {
             InitializeComponent();
             context = new Baza.DbTuristickaAgencija();
             unit = new UnitOfWork(context);
             napuniAranzmane();
-            
+            napuniRez();
+            napuniKorisnike();
             grid1.ItemsSource = aranz;
-            grid2.ItemsSource = aranz; //izmeni
+            NapuniCombo();
+            grid2.ItemsSource = aranr; //izmeni
             
 
         }
 
+        private void NapuniCombo()
+        {
+            foreach(TurAranzmann n in aranz)
+            {
+                idaranz.Items.Add(n.idAranzmana);
+            }
+
+            foreach(Korisnik k in korisnici)
+            {
+                jmbg.Items.Add(k.jmbgKorisnika);
+            }
+
+
+        }
         private void napuniAranzmane()
         {
             this.aranz = this.unit.TurAranzmans.GetAllTurAranzmanns();
+        }
+
+        private void napuniRez()
+        {
+            this.aranr = this.unit.RezAranzmanas.GetAllRezAranzmanas();
+        }
+
+        private void napuniKorisnike()
+        {
+            this.korisnici = this.unit.Korisniks.GetAllKorisniks();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -76,6 +104,11 @@ namespace TuristickaAgencija
             grid1.ItemsSource = aranz;
             grid1.Columns[6].Visibility = Visibility.Hidden;
 
+
+        }
+
+        private void Button_Click2(object sender, RoutedEventArgs e)
+        {
 
         }
     }

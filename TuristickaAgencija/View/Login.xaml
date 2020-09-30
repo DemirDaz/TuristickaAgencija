@@ -11,12 +11,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TuristickaAgencija"
         mc:Ignorable="d"
-        Title="Login" Height="410" Width="800" MinHeight="410" MinWidth="700" WindowStartupLocation="CenterScreen">
-    <Grid Margin="0,35,3.6,35.4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="790">
-        <Image x:Name="image" Height="215" VerticalAlignment="Center" Source="/TuristickaAgencija;component/Resources/login.jpg" Stretch="Fill" Margin="0,65,-5,36" />
+        Title="Login" Height="360" Width="700" MinHeight="360" MinWidth="700" WindowStartupLocation="CenterScreen">
+    <Grid Margin="2,-10,1.6,-1.6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="790" Height="342">
+        <Image x:Name="image" Height="246" VerticalAlignment="Bottom" Source="/TuristickaAgencija;component/Resources/login.jpg" Stretch="Fill" Margin="45,0,45,86" />
         <TextBlock
-    Style="{StaticResource MaterialDesignHeadline2TextBlock}" Margin="70,0,70,244" Width="650" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"><Run Text="TURISTIČKA AGENCIJA"/></TextBlock>
-        <StackPanel Margin="300,95,290,74" VerticalAlignment="Center" Width="200" HorizontalAlignment="Center" Height="147">
+    Style="{StaticResource MaterialDesignHeadline3TextBlock}" Margin="70,264,70,6" Width="650" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"><Run Text="TURISTIČKA AGENCIJA"/></TextBlock>
+        <StackPanel  VerticalAlignment="Center" Width="200" HorizontalAlignment="Center" Height="147">
             <TextBox
   x:Name="user"
   materialDesign:HintAssist.Hint="Korisničko ime"
