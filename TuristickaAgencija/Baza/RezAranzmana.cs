@@ -16,20 +16,13 @@ namespace TuristickaAgencija.Baza
         
         public DateTime datumRez { get; set; }
         public int brOsoba { get; set; }
-        //public float ukupnaCena { get; set; }
+       
 
-        private float ukupnaCena;
-        public float UkupnaCena
-        {
-            get { return ukupnaCena; }
-            set
-            {
-                ukupnaCena = brOsoba * TurAranzmann.cena;
-                
-            }
-        }
+        public float ukupnaCena { get; set; }
+       
         public TurAranzmann TurAranzmann { get; set; }
         public Korisnik Korisnik { get; set; }
 
+        
     }
 }

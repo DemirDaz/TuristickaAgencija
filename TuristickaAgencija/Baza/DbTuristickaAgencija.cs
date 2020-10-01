@@ -84,7 +84,7 @@ namespace TuristickaAgencija.Baza
             modelBuilder.Entity<RezAranzmana>().HasRequired(b => b.Korisnik).WithMany(a => a.RezAranzmanas).HasForeignKey(b => b.jmbgKorisnika);
             modelBuilder.Entity<RezAranzmana>().Property(k => k.datumRez).IsRequired();
             modelBuilder.Entity<RezAranzmana>().Property(k => k.brOsoba).IsRequired();
-            modelBuilder.Entity<RezAranzmana>().Property(k => k.UkupnaCena).IsRequired();
+            modelBuilder.Entity<RezAranzmana>().Property(k => k.ukupnaCena).IsRequired();
 
 
             modelBuilder.Entity<RezSmestaja>().HasKey(k => k.idRez);

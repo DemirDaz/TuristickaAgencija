@@ -24,7 +24,7 @@
             <RowDefinition Height="51*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Margin="40,0,0,250" HorizontalAlignment="Left"  Width="150" Grid.ColumnSpan="2" Grid.RowSpan="2">
+        <StackPanel Margin="10,0,0,250" HorizontalAlignment="Left"  Width="150" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <TextBox x:Name="one"
              materialDesign:HintAssist.Hint="Destinacija"
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
@@ -35,7 +35,7 @@
   Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
             <DatePicker x:Name="three"
   materialDesign:HintAssist.Hint="Datum Završetka"
-  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="0,0,0.4,0" />
+  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Margin="0,0,0,0" />
             <TextBox x:Name="four"
              materialDesign:HintAssist.Hint="Cena po osobi (€)"
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
@@ -61,7 +61,7 @@
   CanUserAddRows="False"
   SelectionUnit="FullRow"
                   IsReadOnly="True"
-  SelectionMode="Extended" HorizontalAlignment="Left" Margin="97.2,0,0,23.8" Grid.Column="1"  >
+  SelectionMode="Extended" HorizontalAlignment="Left" Margin="97.2,0,0,23.8" Grid.Column="1" SelectionChanged="grid1_SelectionChanged"  >
             <DataGrid.Background>
                 <ImageBrush ImageSource="/TuristickaAgencija;component/Resources/darkaranz3.jpg" Stretch="UniformToFill"/>
             </DataGrid.Background>
@@ -70,12 +70,17 @@
             CanUserAddRows="False"
             SelectionUnit="FullRow"
             IsReadOnly="True"
-            SelectionMode="Extended" HorizontalAlignment="Left" Margin="97.2,37.2,0,0" Grid.Row="1" Grid.Column="1" >
+            SelectionMode="Extended" HorizontalAlignment="Left" Margin="97.2,37.2,0,0" Grid.Row="1" Grid.Column="1" SelectionChanged="grid2_SelectionChanged" >
             <DataGrid.Background>
                 <ImageBrush ImageSource="/TuristickaAgencija;component/Resources/darkaranz4.jpg"/>
             </DataGrid.Background>
         </DataGrid>
-        <StackPanel Margin="40,42,0,0" HorizontalAlignment="Left"  Width="150" Grid.Row="1" Grid.ColumnSpan="2">
+        <Button  Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                            HorizontalAlignment="Left"
+                            ToolTip="MaterialDesignFloatingActionMiniButton" Grid.Column="1" Margin="44.2,203,0,17.8" Click="Obrisi">
+            <materialDesign:PackIcon Kind="Delete" Height="24" Width="24" />
+        </Button>
+        <StackPanel Margin="10,80.2,0,-38" HorizontalAlignment="Left"  Width="150" Grid.Row="1" Grid.ColumnSpan="2">
             <ComboBox x:Name="idaranz"
              materialDesign:HintAssist.Hint="id Aranžmana" Margin="0,5,0.4,5" Height="28">
 
@@ -84,10 +89,6 @@
              materialDesign:HintAssist.Hint="jmbg klijenta" Margin="0,5">
 
             </ComboBox>
-            <DatePicker x:Name="two1"
-                Width="150" HorizontalAlignment="Stretch"
-                materialDesign:HintAssist.Hint="Datum Rezervacije:"
-                Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
 
             <TextBox x:Name="four1"
                 materialDesign:HintAssist.Hint="Broj osoba:"
@@ -100,5 +101,10 @@
 
 
         </StackPanel>
+        <Button Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+            HorizontalAlignment="Left"
+            ToolTip="MaterialDesignFloatingActionMiniButton" Grid.Column="1" Margin="44.2,201,0,10" Grid.Row="1" Click="Obrisirezervaciju">
+            <materialDesign:PackIcon Kind="Delete" Height="24" Width="24" />
+        </Button>
     </Grid>
 </UserControl>

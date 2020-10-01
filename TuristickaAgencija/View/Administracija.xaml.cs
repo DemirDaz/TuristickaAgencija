@@ -34,7 +34,7 @@ namespace TuristickaAgencija
         public Administracija()
         {
             InitializeComponent();
-            context = new Baza.DbTuristickaAgencija();
+            context = new DbTuristickaAgencija();
             unit = new UnitOfWork(context);
             napuniRadnike();
             napuniFilijale();
@@ -93,6 +93,7 @@ namespace TuristickaAgencija
             sifra.Text = String.Empty;
             datum.SelectedDate = null;
             brmob.Text = String.Empty;
+            filijala.Items.Clear(); 
             brpriv.Text = String.Empty;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -149,6 +150,7 @@ namespace TuristickaAgencija
             mejl.Text = String.Empty;
             telefon.Text = String.Empty;
             webadresa.Text = String.Empty;
+            menadzer.Items.Clear(); 
             
           
         }

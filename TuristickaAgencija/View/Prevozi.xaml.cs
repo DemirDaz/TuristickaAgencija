@@ -52,18 +52,7 @@ namespace TuristickaAgencija
 
         
 
-        bool IsEmail(string email)
-        {
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
-            }
-            catch
-            {
-                return false;
-            }
-        }
+     
 
         private void napuniKlijente()
         {
@@ -78,8 +67,7 @@ namespace TuristickaAgencija
             datum.SelectedDate = null;
             vreme.SelectedTime = null;
             cena.Text = String.Empty;
-            tip.SelectedItem = null;
-            klijent.SelectedIndex = -1;
+            klijent.Items.Clear();
            
         }
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -109,6 +97,7 @@ namespace TuristickaAgencija
                 MessageBox.Show("Uspešno dodata nova rezervacija prevoza");
                 napuniKarte();
                 Ocisti();
+                napuniKlijente();
                 grid1.ItemsSource = aranz;
             }
             else

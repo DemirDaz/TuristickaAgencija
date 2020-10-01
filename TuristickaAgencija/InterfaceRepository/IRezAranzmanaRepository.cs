@@ -12,7 +12,7 @@ namespace TuristickaAgencija.InterfaceRepository
         IEnumerable<RezAranzmana> GetAllRezAranzmanas();
         void AddRezAranzmana(RezAranzmana rez);
         RezAranzmana GetRezAranzmanaId(int rez);
-        void DeleteReferents(RezAranzmana rez);
+        void DeleteAranzman(RezAranzmana rez);
         IEnumerable<RezAranzmana> FindByAranzman(int idAranzmana);
 
     }

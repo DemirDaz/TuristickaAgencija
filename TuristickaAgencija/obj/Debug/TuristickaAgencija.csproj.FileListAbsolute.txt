@@ -40,3 +40,5 @@ C:\Users\Demir\source\repos\TuristickaAgencija\TuristickaAgencija\obj\Debug\View
 C:\Users\Demir\source\repos\TuristickaAgencija\TuristickaAgencija\obj\Debug\View\Klijenti.baml
 C:\Users\Demir\source\repos\TuristickaAgencija\TuristickaAgencija\obj\Debug\TuristickaAgencija.Migrations.mig3.resources
 C:\Users\Demir\source\repos\TuristickaAgencija\TuristickaAgencija\obj\Debug\TuristickaAgencija.Migrations._1oct.resources
+C:\Users\Demir\source\repos\TuristickaAgencija\TuristickaAgencija\obj\Debug\TuristickaAgencija.Migrations.firstoct.resources
+C:\Users\Demir\source\repos\TuristickaAgencija\TuristickaAgencija\obj\Debug\TuristickaAgencija.Migrations.octnew.resources

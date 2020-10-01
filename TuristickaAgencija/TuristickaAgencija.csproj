@@ -89,6 +89,14 @@
     <Compile Include="Migrations\202010010049379_1oct.designer.cs">
       <DependentUpon>202010010049379_1oct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010011325229_firstoct.cs" />
+    <Compile Include="Migrations\202010011325229_firstoct.designer.cs">
+      <DependentUpon>202010011325229_firstoct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010011338431_octnew.cs" />
+    <Compile Include="Migrations\202010011338431_octnew.designer.cs">
+      <DependentUpon>202010011338431_octnew.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Administracija.xaml.cs">
       <DependentUpon>Administracija.xaml</DependentUpon>
     </Compile>
@@ -203,6 +211,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010010049379_1oct.resx">
       <DependentUpon>202010010049379_1oct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010011325229_firstoct.resx">
+      <DependentUpon>202010011325229_firstoct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010011338431_octnew.resx">
+      <DependentUpon>202010011338431_octnew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

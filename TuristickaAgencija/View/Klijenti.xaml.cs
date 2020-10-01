@@ -77,6 +77,8 @@ namespace TuristickaAgencija
             telefon.Text = String.Empty;
 
         }
+
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -100,7 +102,7 @@ namespace TuristickaAgencija
 
                 this.unit.Korisniks.AddKorisnik(novi);
 
-                MessageBox.Show("Uspešno dodat novi radnik");
+                MessageBox.Show("Uspešno dodat novi klijent.");
                 napuniKlijente();
                 Ocisti();
                 grid1.ItemsSource = aranz;

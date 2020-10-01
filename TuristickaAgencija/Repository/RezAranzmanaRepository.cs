@@ -22,7 +22,7 @@ namespace TuristickaAgencija.Repository
             this.context.SaveChanges();
         }
 
-        public void DeleteReferents(RezAranzmana rez)
+        public void DeleteAranzman(RezAranzmana rez)
         {
             this.context.RezAranzmanas.Remove(rez);
             this.context.SaveChanges();
