@@ -18,19 +18,21 @@
     Style="{StaticResource MaterialDesignHeadline3TextBlock}" Margin="70,264,70,6" Width="650" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"><Run Text="TURISTIČKA AGENCIJA"/></TextBlock>
         <StackPanel  VerticalAlignment="Center" Width="200" HorizontalAlignment="Center" Height="147">
             <TextBox
-  x:Name="user"
-  materialDesign:HintAssist.Hint="Korisničko ime"
-  materialDesign:HintAssist.HelperText="Vaša email adresa." VerticalAlignment="Center"  Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
-            <PasswordBox
-  x:Name="sifra"
-  materialDesign:HintAssist.Hint="Lozinka"
-  materialDesign:HintAssist.Foreground="White"
-  materialDesign:TextFieldAssist.UnderlineBrush="Orange"
-  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Height="59" Margin="0,0,0.2,0" />
+            x:Name="user"
+            materialDesign:HintAssist.Hint="Korisničko ime"
+            materialDesign:HintAssist.HelperText="Vaša email adresa."
+           
+            VerticalAlignment="Center"  Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+           <PasswordBox
+           x:Name="sifra"
+           materialDesign:HintAssist.Hint="Lozinka"
+           materialDesign:HintAssist.Foreground="White"
+           materialDesign:TextFieldAssist.UnderlineBrush="Orange"
+           Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Height="59" Margin="0,0,0.2,0" />
             <Button
-    Style="{StaticResource MaterialDesignRaisedButton}"
-    Width="100"
-    ToolTip="Resource name: MaterialDesignRaisedButton" Margin="0,24,0,0" Click="Button_Click" Content="Uloguj se!"/>
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            Width="100"
+            ToolTip="Resource name: MaterialDesignRaisedButton" Margin="0,24,0,0" Click="Button_Click" Content="Uloguj se!"/>
 
         </StackPanel>
     </Grid>

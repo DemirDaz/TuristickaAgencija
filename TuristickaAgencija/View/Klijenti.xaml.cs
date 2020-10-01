@@ -33,7 +33,7 @@ namespace TuristickaAgencija
             napuniKlijente();
             grid1.DataContext = brisi;
             grid1.ItemsSource = aranz;
-            
+
 
 
         }
@@ -49,7 +49,7 @@ namespace TuristickaAgencija
 
         }
 
-        
+
 
         bool IsEmail(string email)
         {
@@ -68,14 +68,14 @@ namespace TuristickaAgencija
         {
             jmbg.Text = String.Empty;
             ime.Text = String.Empty;
-            
+
             prezime.Text = String.Empty;
-           
+
             adresa.Text = String.Empty;
             email.Text = String.Empty;
-            
+
             telefon.Text = String.Empty;
-           
+
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -83,20 +83,20 @@ namespace TuristickaAgencija
             if (jmbg.Text.Length == 13 && proveraBroja(jmbg.Text) == true)
             {
                 Korisnik novi = new Korisnik();
-                
+
                 novi.jmbgKorisnika = jmbg.Text;
                 novi.ime = ime.Text;
-                
+
                 novi.prezime = prezime.Text;
-                
-               
+
+
                 novi.adresa = adresa.Text;
-               
+
                 if (IsEmail(email.Text) == true) novi.email = email.Text;
                 else { MessageBox.Show("Niste uneli validan email"); return; }
                 if (proveraBroja(telefon.Text) == true) novi.telefon = telefon.Text;
                 else { MessageBox.Show("Niste uneli validan službeni broj mobilnog."); return; }
-               
+
 
                 this.unit.Korisniks.AddKorisnik(novi);
 
@@ -145,3 +145,4 @@ namespace TuristickaAgencija
             }
         }
     }
+}

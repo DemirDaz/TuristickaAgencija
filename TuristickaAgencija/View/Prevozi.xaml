@@ -17,31 +17,37 @@
 
         <Image x:Name="image" HorizontalAlignment="Left" Height="275" VerticalAlignment="Top" Width="1000" Source="/TuristickaAgencija;component/Resources/avion.jpg" Stretch="UniformToFill" Margin="0,-70,0,0"/>
 
-        <StackPanel Margin="435,175,0,10" HorizontalAlignment="Left"  Width="150">
-            <TextBox x:Name="one"
+        <StackPanel Margin="190,205,0,0" HorizontalAlignment="Left"  Width="150">
+            <TextBox x:Name="destinacija"
              materialDesign:HintAssist.Hint="Destinacija"
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-             VerticalAlignment="Center" Margin="0,20,0,0" />
-            <DatePicker x:Name="two"
+             VerticalAlignment="Center" Margin="0" AutomationProperties.IsRequiredForForm="True" />
+            <DatePicker x:Name="datum"
   Width="150" HorizontalAlignment="Stretch"
-  materialDesign:HintAssist.Hint="Datum Početka"
-  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
-            <DatePicker x:Name="three"
-  Width="150" HorizontalAlignment="Stretch"
-  materialDesign:HintAssist.Hint="Datum Završetka"
-  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
-            <TextBox x:Name="four"
-             materialDesign:HintAssist.Hint="Cena po osobi"
+  materialDesign:HintAssist.Hint="Datum prevoza"
+  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" AutomationProperties.IsRequiredForForm="True" />
+            <ComboBox x:Name="klijent"
+                materialDesign:HintAssist.Hint="JMBG klijenta"
+                VerticalAlignment="Center" Margin="0,10,0,0" >
+                
+            </ComboBox>
+            <materialDesign:TimePicker x:Name="vreme" Margin="0,20,0,0"
+                         materialDesign:HintAssist.Hint="Vreme prevoza"/>
+            <TextBox x:Name="cena"
+             materialDesign:HintAssist.Hint="Cena prevoza (€)"
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-             VerticalAlignment="Center" Margin="0,20,0,0" />
-            <TextBox x:Name="five"
-             materialDesign:HintAssist.Hint="Način plaćanja"
-             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-             VerticalAlignment="Center" Margin="0,20,0,0" />
+             VerticalAlignment="Center" Margin="0,0,0,0" />
+            <ComboBox x:Name="tip"
+             materialDesign:HintAssist.Hint="Tip prevoza"
+             VerticalAlignment="Center" Margin="0,10,0,0" >
+                <ComboBoxItem>Avion</ComboBoxItem>
+                <ComboBoxItem>Autobus</ComboBoxItem>
+                <ComboBoxItem>Voz</ComboBoxItem>
+                <ComboBoxItem>Brod</ComboBoxItem>
+            </ComboBox>
             <Button
              Style="{StaticResource MaterialDesignRaisedAccentButton}"
-             Width="100"
-             ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="0,20,0,0" Click="Button_Click" Content="Dodaj novi!"/>
+             ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="0,10,0.4,5" Click="Button_Click" Content="Rezerviši prevoz!"/>
 
 
         </StackPanel>
@@ -51,6 +57,9 @@
   CanUserAddRows="False"
   SelectionUnit="FullRow"
                   IsReadOnly="True"
-  SelectionMode="Extended" HorizontalAlignment="Right" Margin="0,205,0,0" />
+  SelectionMode="Extended" HorizontalAlignment="Right" Margin="0,205,0,0" SelectionChanged="grid1_SelectionChanged" Width="640" />
+        <Button
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="28,472,820,10" Click="Obrisi" Content="Obriši rezervaciju!" Height="Auto"/>
     </Grid>
-</UserControl>
+</UserControl> 

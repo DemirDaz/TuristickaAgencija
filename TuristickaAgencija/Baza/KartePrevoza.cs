@@ -14,5 +14,8 @@ namespace TuristickaAgencija.Baza
         public float cena { get; set; }
         public string tipPrevoza { get; set; }
 
+        public string jmbgKorisnika { get; set; }
+        public Korisnik Korisnik { get; set; }
+
     }
 }

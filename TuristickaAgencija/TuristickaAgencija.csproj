@@ -85,6 +85,10 @@
     <Compile Include="Migrations\202009252125308_mig3.designer.cs">
       <DependentUpon>202009252125308_mig3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010010049379_1oct.cs" />
+    <Compile Include="Migrations\202010010049379_1oct.designer.cs">
+      <DependentUpon>202010010049379_1oct.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Administracija.xaml.cs">
       <DependentUpon>Administracija.xaml</DependentUpon>
     </Compile>
@@ -196,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009252125308_mig3.resx">
       <DependentUpon>202009252125308_mig3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010010049379_1oct.resx">
+      <DependentUpon>202010010049379_1oct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

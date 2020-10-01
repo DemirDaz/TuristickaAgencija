@@ -15,9 +15,9 @@
               d:DesignHeight="520" d:DesignWidth="1000">
     <Grid>
 
-        <Image x:Name="image" HorizontalAlignment="Left" Height="310" Margin="0,335,0,-125" VerticalAlignment="Top" Width="1000" Source="/TuristickaAgencija;component/Resources/klijenti.jpg" Stretch="Fill"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="310" Margin="0,335,-55,-125" VerticalAlignment="Top" Width="1055" Source="/TuristickaAgencija;component/Resources/klijenti.jpg" Stretch="Fill"/>
 
-        <StackPanel Margin="665,-5,0,190" HorizontalAlignment="Left"  Width="170">
+        <StackPanel Margin="720,-5,0,190" HorizontalAlignment="Left"  Width="170">
             <TextBox x:Name="jmbg"
              materialDesign:HintAssist.Hint="JMBG klijenta"
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
@@ -44,19 +44,19 @@
              VerticalAlignment="Center" Margin="0,0,0,0" AutomationProperties.IsRequiredForForm="True" />
             <Button
              Style="{StaticResource MaterialDesignRaisedAccentButton}"
-             ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="0,20,0.4,0" Click="Button_Click" Content="Dodaj novog klijenta!"/>
+             ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="0,10,0,0" Click="Button_Click" Content="Dodaj novog klijenta!"/>
 
 
         </StackPanel>
         <TextBlock
-    Style="{StaticResource MaterialDesignHeadline2TextBlock}" Margin="220,360,130,0" Foreground="Black" Width="650" VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center"><Run Text="KLIJENTI"/></TextBlock>
+    Style="{StaticResource MaterialDesignHeadline2TextBlock}" Margin="200,368,150,0" Foreground="Black" Width="650" VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center" RenderTransformOrigin="0.492,0.556"><Run Text="KLIJENTI"/></TextBlock>
         <DataGrid x:Name="grid1"
   CanUserAddRows="False"
   SelectionUnit="FullRow"
                   IsReadOnly="True"
-  SelectionMode="Extended" HorizontalAlignment="Left" Margin="0,0,0,190" SelectionChanged="grid1_SelectionChanged" />
+  SelectionMode="Extended" HorizontalAlignment="Left" Margin="0,0,0,190" SelectionChanged="grid1_SelectionChanged" Width="500" />
         <Button
             Style="{StaticResource MaterialDesignRaisedButton}"
-            ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="466,295,340,193" Click="Obrisi" Content="Obriši odabranog klijenta!" Height="Auto"/>
+            ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="514,290,288,193" Click="Obrisi" Content="Obriši odabranog klijenta!" Height="Auto"/>
     </Grid>
 </UserControl>

@@ -11,9 +11,9 @@ namespace TuristickaAgencija.Baza
     {
         public int idRez { get; set; }
         public int idAranzmana { get; set; }
-        public TurAranzmann TurAranzmann { get; set; }
+        
         public string jmbgKorisnika { get; set; }
-        public Korisnik Korisnik { get; set; }
+        
         public DateTime datumRez { get; set; }
         public int brOsoba { get; set; }
         //public float ukupnaCena { get; set; }
@@ -28,6 +28,8 @@ namespace TuristickaAgencija.Baza
                 
             }
         }
+        public TurAranzmann TurAranzmann { get; set; }
+        public Korisnik Korisnik { get; set; }
 
     }
 }

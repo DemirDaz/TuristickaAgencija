@@ -66,7 +66,8 @@ namespace TuristickaAgencija.Baza
             modelBuilder.Entity<KartePrevoza>().Property(k => k.datum).IsRequired();
             modelBuilder.Entity<KartePrevoza>().Property(k => k.cena).IsRequired();
             modelBuilder.Entity<KartePrevoza>().Property(k => k.tipPrevoza).IsRequired().HasMaxLength(10);
-       
+            modelBuilder.Entity<KartePrevoza>().HasRequired(b => b.Korisnik).WithMany(a => a.KartePrevozas).HasForeignKey(b => b.jmbgKorisnika);
+
 
             modelBuilder.Entity<Korisnik>().HasKey(k => k.jmbgKorisnika);
             modelBuilder.Entity<Korisnik>().Property(k => k.ime).IsRequired().HasMaxLength(20);

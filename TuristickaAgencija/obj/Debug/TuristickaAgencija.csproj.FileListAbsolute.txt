@@ -39,3 +39,4 @@ C:\Users\Demir\source\repos\TuristickaAgencija\TuristickaAgencija\obj\Debug\Turi
 C:\Users\Demir\source\repos\TuristickaAgencija\TuristickaAgencija\obj\Debug\View\Klijenti.g.cs
 C:\Users\Demir\source\repos\TuristickaAgencija\TuristickaAgencija\obj\Debug\View\Klijenti.baml
 C:\Users\Demir\source\repos\TuristickaAgencija\TuristickaAgencija\obj\Debug\TuristickaAgencija.Migrations.mig3.resources
+C:\Users\Demir\source\repos\TuristickaAgencija\TuristickaAgencija\obj\Debug\TuristickaAgencija.Migrations._1oct.resources

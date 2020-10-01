@@ -24,13 +24,16 @@ namespace TuristickaAgencija
         private Baza.DbTuristickaAgencija context;
         private UnitOfWork unit;
         private IEnumerable<KartePrevoza> aranz;
+        private IEnumerable<Korisnik> klijenti;
+        private KartePrevoza brisi;
         public Prevozi()
         {
             InitializeComponent();
             context = new Baza.DbTuristickaAgencija();
             unit = new UnitOfWork(context);
             napuniKarte();
-
+            napuniKlijente();
+            grid1.DataContext = brisi;
             grid1.ItemsSource = aranz;
 
 
@@ -41,45 +44,107 @@ namespace TuristickaAgencija
             this.aranz = this.unit.KartePrevozs.GetAllKartePrevoza();
         }
 
+        private bool proveraBroja(string s)
+        {
+            return s.All(Char.IsDigit);
+
+        }
+
+        
+
+        bool IsEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private void napuniKlijente()
+        {
+            this.klijenti = this.unit.Korisniks.GetAllKorisniks();
+            foreach (Korisnik k in klijenti)
+                klijent.Items.Add(k.jmbgKorisnika);
+        }
+
+        private void Ocisti()
+        {
+            destinacija.Text = String.Empty;
+            datum.SelectedDate = null;
+            vreme.SelectedTime = null;
+            cena.Text = String.Empty;
+            tip.SelectedItem = null;
+            klijent.SelectedIndex = -1;
+           
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-
-            if (two.SelectedDate.Value < three.SelectedDate.Value)
+            DateTime prov = DateTime.Now;
+            if (datum.SelectedDate.Value > prov)
             {
-                TurAranzmann novi = new TurAranzmann();
-                novi.destinacija = one.Text;
-                novi.datumPocetka = two.SelectedDate.Value;
-                novi.datumKraja = three.SelectedDate.Value;
-                try
-                {
-                    novi.cena = float.Parse(four.Text);
-                }
-                catch
-                {
-                    MessageBox.Show("Cena nije uneta u ciframa.");
-                    return;
-                }
-                novi.nacinPlacanja = five.Text;
-                this.unit.TurAranzmans.AddTurAranzmann(novi);
+                KartePrevoza novi = new KartePrevoza();
 
-                MessageBox.Show("Uspešno dodat novi aranžman");
+                DateTime pun = new DateTime(datum.SelectedDate.Value.Year,
+                                            datum.SelectedDate.Value.Month,
+                                            datum.SelectedDate.Value.Day,
+                                            vreme.SelectedTime.Value.Hour,
+                                            vreme.SelectedTime.Value.Minute,
+                                            vreme.SelectedTime.Value.Second);
+                novi.destinacija = destinacija.Text;
+                novi.jmbgKorisnika = klijent.SelectedItem.ToString();
+                novi.tipPrevoza = tip.Text;
+                if (proveraBroja(cena.Text) == true) novi.cena = float.Parse(cena.Text);
+                else { MessageBox.Show("Niste uneli cenu validno. Samo cifre su dozvoljene."); return; }
+                novi.datum = pun;
+            
+
+                this.unit.KartePrevozs.AddKartaPrevoza(novi);
+
+                MessageBox.Show("Uspešno dodata nova rezervacija prevoza");
+                napuniKarte();
+                Ocisti();
+                grid1.ItemsSource = aranz;
             }
             else
             {
-                MessageBox.Show("Datumi nisu validni.");
-                one.Text = String.Empty;
-                two.SelectedDate = null;
-                three.SelectedDate = null;
-                four.Text = string.Empty;
-                five.Text = string.Empty;
+                MessageBox.Show("Datum koji ste odabrali nije validan, već je prošao.");
+                return;
             }
-            napuniKarte();
 
-            grid1.ItemsSource = aranz;
-            
+        }
+        private void Obrisi(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Da li ste sigurni?", "Provera",
+                                 MessageBoxButton.YesNo
+                                );
+            if (result == MessageBoxResult.No)
+            {
 
+                return;
+            }
+            else
+            {
+                try
+                {
+                    this.unit.KartePrevozs.DeleteKartaPrevoza(this.brisi);
+                    MessageBox.Show("Uspešno obrisana rezervacija.");
+                    napuniKarte();
+                    grid1.ItemsSource = aranz;
+                }
+                catch { MessageBox.Show("Niste odabrali rezervaciju u tabeli."); }
 
+            }
+        }
+
+        private void grid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.brisi = (KartePrevoza)grid1.CurrentItem;
         }
     }
 }

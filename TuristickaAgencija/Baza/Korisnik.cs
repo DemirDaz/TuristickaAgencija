@@ -15,5 +15,7 @@ namespace TuristickaAgencija.Baza
         public string telefon { get; set; }
         public string email { get; set; }
         public ICollection<RezAranzmana> RezAranzmanas { get; set; }
+
+        public ICollection<KartePrevoza> KartePrevozas { get; set; }
     }
 }
