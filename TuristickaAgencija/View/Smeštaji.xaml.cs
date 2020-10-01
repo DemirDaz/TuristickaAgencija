@@ -37,6 +37,7 @@ namespace TuristickaAgencija
             napuniHotele();
             napuniKlijente();
             napuniCombo();
+            if (Globalne.menadzer == false) { sakrij.Visibility = Visibility.Hidden; sakrijdugme.Visibility = Visibility.Hidden; sakrijdugme2.Visibility = Visibility.Hidden; }
             grid1.DataContext = brisi;
             grid2.DataContext = obrisi;
             grid1.ItemsSource = aran2;

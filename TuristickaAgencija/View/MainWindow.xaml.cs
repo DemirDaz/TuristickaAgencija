@@ -32,8 +32,8 @@ namespace TuristickaAgencija
             unit = new UnitOfWork(context);
             
             Filijala();
-            if (Globalne.menadzer == true) administracija.Visibility = Visibility.Visible;
-            else administracija.Visibility = Visibility.Hidden;
+            if (Globalne.menadzer == true) administracija.Visibility = Visibility.Visible; 
+            else administracija.Visibility = Visibility.Collapsed;
             podacifilijale.Text = "Filijala: " + Environment.NewLine + trenutna.naziv + Environment.NewLine + Environment.NewLine+
                                   "Adresa: " + Environment.NewLine + trenutna.sediste + Environment.NewLine + Environment.NewLine +
                                   "MaticniBroj: " + Environment.NewLine + trenutna.maticniBroj + Environment.NewLine + Environment.NewLine +

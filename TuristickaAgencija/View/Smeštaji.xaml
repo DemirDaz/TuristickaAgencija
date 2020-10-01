@@ -15,7 +15,7 @@
              d:DesignHeight="520" d:DesignWidth="1000">
     <Grid>
 
-        <StackPanel Margin="808,12,0,242" HorizontalAlignment="Left"  Width="153">
+        <StackPanel x:Name="sakrij" Margin="808,12,0,242" HorizontalAlignment="Left"  Width="153">
             <TextBox x:Name="ime"
              materialDesign:HintAssist.Hint="Ime Hotela"
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
@@ -98,10 +98,10 @@
         <Button
                 Style="{StaticResource MaterialDesignRaisedAccentButton}"
                 ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="215,226,640,244" Content="Dodaj rezervaciju" Height="Auto" Click="Button_Click_1"/>
-        <Button
+        <Button x:Name="sakrijdugme2"
              Style="{StaticResource MaterialDesignRaisedAccentButton}"
              ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="645,226,208,242" Click="Button_Click" Height="Auto" Content="Dodaj novi hotel"/>
-        <Button  Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+        <Button x:Name="sakrijdugme" Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Left"
             ToolTip="MaterialDesignFloatingActionMiniButton" Margin="747,160,0,311" Click="Obrisi">
             <materialDesign:PackIcon Kind="Delete" Height="24" Width="24" />

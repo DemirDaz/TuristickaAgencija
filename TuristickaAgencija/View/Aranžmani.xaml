@@ -24,7 +24,7 @@
             <RowDefinition Height="51*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Margin="10,0,0,250" HorizontalAlignment="Left"  Width="150" Grid.ColumnSpan="2" Grid.RowSpan="2">
+        <StackPanel x:Name="sakrij" Margin="10,0,0,250" HorizontalAlignment="Left"  Width="150" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <TextBox x:Name="one"
              materialDesign:HintAssist.Hint="Destinacija"
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
@@ -75,7 +75,7 @@
                 <ImageBrush ImageSource="/TuristickaAgencija;component/Resources/darkaranz4.jpg"/>
             </DataGrid.Background>
         </DataGrid>
-        <Button  Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+        <Button x:Name="sakrijdugme"  Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
                             HorizontalAlignment="Left"
                             ToolTip="MaterialDesignFloatingActionMiniButton" Grid.Column="1" Margin="44.2,203,0,17.8" Click="Obrisi">
             <materialDesign:PackIcon Kind="Delete" Height="24" Width="24" />
