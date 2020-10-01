@@ -42,3 +42,7 @@ C:\Users\Demir\source\repos\TuristickaAgencija\TuristickaAgencija\obj\Debug\Turi
 C:\Users\Demir\source\repos\TuristickaAgencija\TuristickaAgencija\obj\Debug\TuristickaAgencija.Migrations._1oct.resources
 C:\Users\Demir\source\repos\TuristickaAgencija\TuristickaAgencija\obj\Debug\TuristickaAgencija.Migrations.firstoct.resources
 C:\Users\Demir\source\repos\TuristickaAgencija\TuristickaAgencija\obj\Debug\TuristickaAgencija.Migrations.octnew.resources
+C:\Users\Demir\source\repos\TuristickaAgencija\TuristickaAgencija\obj\Debug\TuristickaAgencija.Migrations.latest.resources
+C:\Users\Demir\source\repos\TuristickaAgencija\TuristickaAgencija\obj\Debug\TuristickaAgencija.Migrations.cenausluge.resources
+C:\Users\Demir\source\repos\TuristickaAgencija\TuristickaAgencija\obj\Debug\TuristickaAgencija.Migrations.cenausluge1.resources
+C:\Users\Demir\source\repos\TuristickaAgencija\TuristickaAgencija\obj\Debug\TuristickaAgencija.Migrations.cenausluge2.resources

@@ -25,6 +25,9 @@ namespace TuristickaAgencija
         private UnitOfWork unit;
         private IEnumerable<RezSmestaja> aranz;
         private IEnumerable<Hotel> aran2;
+        private IEnumerable<Korisnik> klijenti;
+        private Hotel brisi;
+        private RezSmestaja obrisi;
         public Smeštaji()
         {
             InitializeComponent();
@@ -32,13 +35,46 @@ namespace TuristickaAgencija
             unit = new UnitOfWork(context);
             napuniRez();
             napuniHotele();
-
-            grid1.ItemsSource = aranz;
-            grid2.ItemsSource = aran2;
+            napuniKlijente();
+            napuniCombo();
+            grid1.DataContext = brisi;
+            grid2.DataContext = obrisi;
+            grid1.ItemsSource = aran2;
+            grid2.ItemsSource = aranz;
 
 
         }
+        private void napuniKlijente()
+        {
+            this.klijenti = this.unit.Korisniks.GetAllKorisniks();
+           
+        }
 
+        private void napuniCombo()
+        {
+            foreach (Korisnik k in klijenti)
+                jmbgKlijenta.Items.Add(k.jmbgKorisnika);
+            foreach (Hotel k in aran2)
+                idhotela.Items.Add(k.idHotela);
+        }
+
+        bool IsEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        private bool proveraBroja(string s)
+        {
+            return s.All(Char.IsDigit);
+
+        }
         private void napuniRez()
         {
             this.aranz = this.unit.RezSmestajas.GetAllRezSmestaja();
@@ -48,42 +84,153 @@ namespace TuristickaAgencija
             this.aran2 = this.unit.Hotels.GetAllHotels();
         }
 
+        
+
+        private void Obrisi(object sender, RoutedEventArgs e)
+        {
+            Ocisti();
+            var result = MessageBox.Show("Da li ste sigurni?", "Provera",
+                                 MessageBoxButton.YesNo
+                                );
+            if (result == MessageBoxResult.No)
+            {
+
+                return;
+            }
+            else
+            {
+                try
+                {
+                    this.unit.Hotels.DeleteHotel(this.brisi);
+                    MessageBox.Show("Uspešno obrisana rezervacija.");
+                    napuniHotele();
+                    grid1.ItemsSource = aranz;
+                }
+                catch { MessageBox.Show("Niste odabrali rezervaciju u tabeli."); }
+
+            }
+
+        }
+
+        private void Obrisirezervaciju(object sender, RoutedEventArgs e)
+        {
+            Ocisti2();
+            var result = MessageBox.Show("Da li ste sigurni?", "Provera",
+                                 MessageBoxButton.YesNo
+                                );
+            if (result == MessageBoxResult.No)
+            {
+
+                return;
+            }
+            else
+            {
+                try
+                {
+                    this.unit.RezSmestajas.DeleteRezSmestaja(this.obrisi);
+                    MessageBox.Show("Uspešno obrisana rezervacija.");
+                    napuniRez();
+                    grid1.ItemsSource = aranz;
+                }
+                catch { MessageBox.Show("Niste odabrali rezervaciju u tabeli."); }
+
+            }
+
+        }
+
+        private void Ocisti()
+        {
+            ime.Text = String.Empty;
+            lokacija.Text = String.Empty;
+            kategorija.SelectedIndex = -1;
+            email.Text = String.Empty;
+            webadresa.Text = String.Empty;
+
+        }
+
+        private void Ocisti2()
+        {
+            idhotela.Items.Clear();
+            jmbgKlijenta.Items.Clear();
+            datumPocetka.SelectedDate = null;
+            datumZavrsetka.SelectedDate = null;
+            vrstaUsluge.SelectedIndex = -1;
+            cenaUsluge.Text = String.Empty;
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if((ime.Text.Length != 0) && (lokacija.Text.Length != 0) && (kategorija.Text.Length != 0) && (email.Text.Length != 0) && (webadresa.Text.Length != 0))
+            {
+                Hotel novi = new Hotel();
+                novi.ime = ime.Text;
+                novi.lokacija = lokacija.Text;
+                novi.kategorija = kategorija.Text;
+                if (IsEmail(email.Text) == true) { novi.email = email.Text; } else { MessageBox.Show("Unesite validan email.");return; }
+                novi.webadresa = webadresa.Text;
+
+                this.unit.Hotels.AddHotel(novi);
+                MessageBox.Show("Uspešno dodat novi hotel!");
+                napuniHotele();
+                grid1.ItemsSource = aran2;
+                Ocisti();
+                Ocisti2();
+                napuniCombo();
+            }
+            else { MessageBox.Show("Popunite sva polja!"); return; }
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
 
-            if (two.SelectedDate.Value < three.SelectedDate.Value)
+            if (datumPocetka.SelectedDate.Value < datumZavrsetka.SelectedDate.Value)
             {
-                TurAranzmann novi = new TurAranzmann();
-                novi.destinacija = one.Text;
-                novi.datumPocetka = two.SelectedDate.Value;
-                novi.datumKraja = three.SelectedDate.Value;
+                RezSmestaja novi = new RezSmestaja();
+                
+                novi.idHotela = int.Parse(idhotela.Text);
+                novi.jmbgKlijenta = jmbgKlijenta.Text;
+                novi.datumPocetka = datumPocetka.SelectedDate.Value;
+                novi.datumZavrsetka = datumZavrsetka.SelectedDate.Value;
+                novi.vrstaUsluge = vrstaUsluge.Text;
                 try
                 {
-                    novi.cena = float.Parse(four.Text);
+                    novi.cenaUsluge = float.Parse(cenaUsluge.Text);
                 }
                 catch
                 {
                     MessageBox.Show("Cena nije uneta u ciframa.");
                     return;
                 }
-                novi.nacinPlacanja = five.Text;
-                this.unit.TurAranzmans.AddTurAranzmann(novi);
+                
+                this.unit.RezSmestajas.AddRezSmestaja(novi);
+                napuniRez();
+                grid2.ItemsSource = aranz;
+                Ocisti();
+                Ocisti2();
+                napuniCombo();
 
-                MessageBox.Show("Uspešno dodat novi aranžman");
+                MessageBox.Show("Uspešno dodana rezervacija!");
             }
             else
             {
                 MessageBox.Show("Datumi nisu validni.");
-                one.Text = String.Empty;
-                two.SelectedDate = null;
-                three.SelectedDate = null;
-                four.Text = string.Empty;
-                five.Text = string.Empty;
+               
             }
+
             
 
+        }
 
+        private void grid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.brisi = (Hotel)grid1.CurrentItem;
+        }
+
+        private void grid2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.obrisi = (RezSmestaja)grid2.CurrentItem;
         }
     }
 }

@@ -30,6 +30,7 @@ namespace TuristickaAgencija
             this.DataContext = new NavigationViewModel();
             context = new Baza.DbTuristickaAgencija();
             unit = new UnitOfWork(context);
+            
             Filijala();
             if (Globalne.menadzer == true) administracija.Visibility = Visibility.Visible;
             else administracija.Visibility = Visibility.Hidden;
@@ -46,6 +47,28 @@ namespace TuristickaAgencija
             this.trenutna = this.unit.Filijalas.GetFilijalaById(Globalne.idFil);
         }
 
+        private void odjaviSe(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Da li ste sigurni?", "Provera",
+                                 MessageBoxButton.YesNo
+                                );
+            if (result == MessageBoxResult.No)
+            {
 
+                return;
+            }
+            else
+            {
+                Globalne.email = String.Empty;
+                Globalne.idFil = -1;
+                Globalne.menadzer = false;
+                this.Close();
+            }
+            
+        }
+
+           
+
+        
     }
 }

@@ -56,7 +56,7 @@ namespace TuristickaAgencija.Baza
             modelBuilder.Entity<Hotel>().HasKey(k => k.idHotela);
             modelBuilder.Entity<Hotel>().Property(k => k.ime).IsRequired().HasMaxLength(20);
             modelBuilder.Entity<Hotel>().Property(k => k.lokacija).IsRequired().HasMaxLength(25);
-            modelBuilder.Entity<Hotel>().Property(k => k.kategorija).IsRequired().HasMaxLength(15);
+            modelBuilder.Entity<Hotel>().Property(k => k.kategorija).IsRequired().HasMaxLength(50);
             modelBuilder.Entity<Hotel>().Property(k => k.email).HasMaxLength(50);
             modelBuilder.Entity<Hotel>().Property(k => k.webadresa).HasMaxLength(50);
 
@@ -90,10 +90,13 @@ namespace TuristickaAgencija.Baza
             modelBuilder.Entity<RezSmestaja>().HasKey(k => k.idRez);
             modelBuilder.Entity<RezSmestaja>().Property(k => k.idHotela).IsRequired();
             modelBuilder.Entity<RezSmestaja>().HasRequired(b => b.Hotel).WithMany(a => a.RezSmestajas).HasForeignKey(b => b.idHotela);
+            modelBuilder.Entity<RezSmestaja>().Property(k => k.jmbgKlijenta).IsRequired();
+            modelBuilder.Entity<RezSmestaja>().HasRequired(b => b.Korisnik).WithMany(a => a.RezSmestajas).HasForeignKey(b => b.jmbgKlijenta);
             modelBuilder.Entity<RezSmestaja>().Property(k => k.datumPocetka).IsRequired();
             modelBuilder.Entity<RezSmestaja>().Property(k => k.datumZavrsetka).IsRequired();
-            modelBuilder.Entity<RezSmestaja>().Property(k => k.vrstaUsluge).IsRequired().HasMaxLength(20);
-           
+            modelBuilder.Entity<RezSmestaja>().Property(k => k.vrstaUsluge).IsRequired().HasMaxLength(30);
+            modelBuilder.Entity<RezSmestaja>().Property(k => k.cenaUsluge).IsRequired();
+
 
             modelBuilder.Entity<TurAranzmann>().HasKey(k => k.idAranzmana);
             modelBuilder.Entity<TurAranzmann>().Property(k => k.destinacija).IsRequired().HasMaxLength(30);

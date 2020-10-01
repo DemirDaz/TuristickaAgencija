@@ -15,27 +15,33 @@
              d:DesignHeight="520" d:DesignWidth="1000">
     <Grid>
 
-        <StackPanel Margin="810,0,0,215" HorizontalAlignment="Left"  Width="153">
-            <TextBox x:Name="one"
-             materialDesign:HintAssist.Hint="Destinacija"
+        <StackPanel Margin="808,12,0,242" HorizontalAlignment="Left"  Width="153">
+            <TextBox x:Name="ime"
+             materialDesign:HintAssist.Hint="Ime Hotela"
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
              VerticalAlignment="Center" Margin="0,0,0,0" />
-            <DatePicker x:Name="two"
-  Width="150" HorizontalAlignment="Stretch"
-  materialDesign:HintAssist.Hint="Datum Početka"
-  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
-            <DatePicker x:Name="three"
-  Width="150" HorizontalAlignment="Stretch"
-  materialDesign:HintAssist.Hint="Datum Završetka"
-  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
-            <TextBox x:Name="four"
-             materialDesign:HintAssist.Hint="Cena po osobi"
+            <TextBox x:Name="lokacija"
+             materialDesign:HintAssist.Hint="Adresa Hotela"
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-             VerticalAlignment="Center" Margin="0,20,0,0" />
-            <TextBox x:Name="five"
-             materialDesign:HintAssist.Hint="Način plaćanja"
+             VerticalAlignment="Center" Margin="0,0,0,0" />
+            <ComboBox x:Name="kategorija"
+             materialDesign:HintAssist.Hint="Broj zvezdica"
+             VerticalAlignment="Center" Margin="0,20,0,0" >
+                <ComboBoxItem>★</ComboBoxItem>
+                <ComboBoxItem>★★</ComboBoxItem>
+                <ComboBoxItem>★★★</ComboBoxItem>
+                <ComboBoxItem>★★★★</ComboBoxItem>
+                <ComboBoxItem>★★★★★</ComboBoxItem>
+            </ComboBox>
+
+            <TextBox x:Name="email"
+             materialDesign:HintAssist.Hint="Email Hotela"
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-             VerticalAlignment="Center" Margin="0,20,0,0" />
+             VerticalAlignment="Center" Margin="0,10,0,0" />
+            <TextBox x:Name="webadresa"
+             materialDesign:HintAssist.Hint="Web Sajt Hotela"
+             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+             VerticalAlignment="Center" Margin="0,10,0,0" />
 
 
         </StackPanel>
@@ -45,7 +51,7 @@
   CanUserAddRows="False"
   SelectionUnit="FullRow"
                   IsReadOnly="True"
-  SelectionMode="Extended" HorizontalAlignment="Left" Margin="25,0,0,300" >
+  SelectionMode="Extended" HorizontalAlignment="Left" Margin="0,0,0,290" SelectionChanged="grid1_SelectionChanged" Width="720" >
             <DataGrid.Background>
                 <ImageBrush ImageSource="/TuristickaAgencija;component/Resources/darksmestaj2.jpg"/>
             </DataGrid.Background>
@@ -54,40 +60,56 @@
   CanUserAddRows="False"
   SelectionUnit="FullRow"
                   IsReadOnly="True"
-  SelectionMode="Extended" HorizontalAlignment="Right" Margin="0,290,37,0" >
+  SelectionMode="Extended" HorizontalAlignment="Right" Margin="0,275,0,0" SelectionChanged="grid2_SelectionChanged" Width="720" >
             <DataGrid.Background>
                 <ImageBrush ImageSource="/TuristickaAgencija;component/Resources/darksmestaj1.jpg" Stretch="UniformToFill"/>
             </DataGrid.Background>
         </DataGrid>
         <StackPanel Margin="25,220,0,10" HorizontalAlignment="Left"  Width="153">
-            <TextBox x:Name="one1"
-                materialDesign:HintAssist.Hint="Destinacija"
-                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                VerticalAlignment="Center" Margin="0,0,0,0" />
-            <DatePicker x:Name="two1"
+            <ComboBox x:Name="idhotela"
+                materialDesign:HintAssist.Hint="ID Hotela"
+                VerticalAlignment="Center" Margin="0,20,0,0" />
+            <ComboBox x:Name="jmbgKlijenta"
+                materialDesign:HintAssist.Hint="JMBG Klijenta"
+                VerticalAlignment="Center" Margin="0,20,0,0" />
+            <DatePicker x:Name="datumPocetka"
                 Width="150" HorizontalAlignment="Stretch"
                 materialDesign:HintAssist.Hint="Datum Početka"
                 Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
-            <DatePicker x:Name="three1"
+            <DatePicker x:Name="datumZavrsetka"
                 Width="150" HorizontalAlignment="Stretch"
                 materialDesign:HintAssist.Hint="Datum Završetka"
                 Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
-            <TextBox x:Name="four1"
-                materialDesign:HintAssist.Hint="Cena po osobi"
-                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                VerticalAlignment="Center" Margin="0,20,0,0" />
-            <TextBox x:Name="five1"
-                materialDesign:HintAssist.Hint="Način plaćanja"
-                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                VerticalAlignment="Center" Margin="0,20,0,0" />
-
+            <ComboBox x:Name="vrstaUsluge"
+                materialDesign:HintAssist.Hint="Vrsta Usluge"
+                VerticalAlignment="Center" Margin="0,20,0,0" >
+                <ComboBoxItem>Prenoćište bez doručka</ComboBoxItem>
+                <ComboBoxItem>Prenoćište sa doručkom</ComboBoxItem>
+                <ComboBoxItem>Pansion</ComboBoxItem>
+                <ComboBoxItem>Polupansion</ComboBoxItem>
+                
+            </ComboBox>
+            <TextBox x:Name="cenaUsluge"
+             materialDesign:HintAssist.Hint="Cena Usluge (€)"
+             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+             VerticalAlignment="Center" Margin="0,0,0,0" />
 
         </StackPanel>
         <Button
                 Style="{StaticResource MaterialDesignRaisedAccentButton}"
-                ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="216,226,642,244" Click="Button_Click" Content="Dodaj novi hotel!" Height="Auto"/>
+                ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="215,226,640,244" Content="Dodaj rezervaciju" Height="Auto" Click="Button_Click_1"/>
         <Button
              Style="{StaticResource MaterialDesignRaisedAccentButton}"
-             ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="645,226,213,242" Click="Button_Click" Height="Auto" Content="Dodaj rezervaciju!"/>
+             ToolTip="Resource name: MaterialDesignRaisedAccentButton" Margin="645,226,208,242" Click="Button_Click" Height="Auto" Content="Dodaj novi hotel"/>
+        <Button  Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+            HorizontalAlignment="Left"
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="747,160,0,311" Click="Obrisi">
+            <materialDesign:PackIcon Kind="Delete" Height="24" Width="24" />
+        </Button>
+        <Button  Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+            HorizontalAlignment="Left"
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="216,280,0,190" Click="Obrisirezervaciju">
+            <materialDesign:PackIcon Kind="Delete" Height="24" Width="24" />
+        </Button>
     </Grid>
 </UserControl>

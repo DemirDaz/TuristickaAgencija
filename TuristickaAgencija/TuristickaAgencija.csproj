@@ -97,6 +97,22 @@
     <Compile Include="Migrations\202010011338431_octnew.designer.cs">
       <DependentUpon>202010011338431_octnew.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010011434336_latest.cs" />
+    <Compile Include="Migrations\202010011434336_latest.designer.cs">
+      <DependentUpon>202010011434336_latest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010011453351_cenausluge.cs" />
+    <Compile Include="Migrations\202010011453351_cenausluge.designer.cs">
+      <DependentUpon>202010011453351_cenausluge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010011536021_cenausluge1.cs" />
+    <Compile Include="Migrations\202010011536021_cenausluge1.designer.cs">
+      <DependentUpon>202010011536021_cenausluge1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010011555188_cenausluge2.cs" />
+    <Compile Include="Migrations\202010011555188_cenausluge2.designer.cs">
+      <DependentUpon>202010011555188_cenausluge2.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Administracija.xaml.cs">
       <DependentUpon>Administracija.xaml</DependentUpon>
     </Compile>
@@ -217,6 +233,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010011338431_octnew.resx">
       <DependentUpon>202010011338431_octnew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010011434336_latest.resx">
+      <DependentUpon>202010011434336_latest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010011453351_cenausluge.resx">
+      <DependentUpon>202010011453351_cenausluge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010011536021_cenausluge1.resx">
+      <DependentUpon>202010011536021_cenausluge1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010011555188_cenausluge2.resx">
+      <DependentUpon>202010011555188_cenausluge2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

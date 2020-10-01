@@ -81,6 +81,7 @@ namespace TuristickaAgencija
             one.Text = String.Empty;
             two.SelectedDate = null;
             three.SelectedDate = null;
+            five.SelectedIndex = -1;
             four.Text = String.Empty;
             
         }

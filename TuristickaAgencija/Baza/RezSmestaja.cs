@@ -11,10 +11,15 @@ namespace TuristickaAgencija.Baza
     {
         public int idRez { get; set; }
         public int idHotela { get; set; }
-        public Hotel Hotel { get; set; }
+        public string jmbgKlijenta { get; set; }
         public DateTime datumPocetka { get; set; }
         public DateTime datumZavrsetka { get; set; }
         public string vrstaUsluge { get; set; }
+        
+        public float cenaUsluge { get; set; }
+
+        public Korisnik Korisnik { get; set; }
+        public Hotel Hotel { get; set; }
 
     }
 }
